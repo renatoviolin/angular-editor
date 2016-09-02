@@ -1,0 +1,16 @@
+var express = require('express');
+var bodyparser = require('body-parser');
+
+var app = express();
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
+app.use("/", express.static(__dirname + '/'));
+
+// var connection = require('./connection');
+var routes = require('./routes');
+
+var server = app.listen(8080, function() {
+   // connection.init();
+   routes.configure(app);
+   console.log('Server listening on port ' + server.address().port);
+});
