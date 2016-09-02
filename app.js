@@ -5,7 +5,7 @@ var app = express();
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 // app.use("/", express.static(__dirname + '/'));
-app.use("/", express.static(__dirname ));
+app.use("/", express.static(__dirname + '/demo' ));
 // app.use("/demo", express.static(__dirname + '/demo'));
 // app.use(express.static(path.join(__dirname, '/')));
 // app.use(express.static(__dirname));
