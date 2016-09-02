@@ -6,6 +6,7 @@ module.exports = {
 
       app.get('/', function(req, res) {
          res.sendFile('demo/index.html', { root: __dirname })
+         // res.sendFile(__dirname + '/demo/index.html');
       });
 
    }
