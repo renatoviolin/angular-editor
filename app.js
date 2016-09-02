@@ -6,6 +6,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 app.use("/", express.static(__dirname + '/'));
 // app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static(__dirname));
 
 // var connection = require('./connection');
 var routes = require('./routes');
