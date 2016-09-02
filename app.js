@@ -9,7 +9,7 @@ app.use("/", express.static(__dirname + '/'));
 // var connection = require('./connection');
 var routes = require('./routes');
 
-var server = app.listen(8080, function() {
+var server = app.listen(80, function() {
    // connection.init();
    routes.configure(app);
    console.log('Server listening on port ' + server.address().port);
