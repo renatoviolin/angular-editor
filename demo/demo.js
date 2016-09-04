@@ -28,8 +28,17 @@ angular.module('demo', ['angular-medium-editor'])
    carregarGrid();
 
    $scope.btn_gravar = function() {
-      // console.log($scope.dados);
       HTTPSendService.gravar_mensagem_banco($scope.dados).then(function(res) {
+         console.log(res);
+         carregarGrid();
+      }).catch(function(err) {
+         alert("Falhou ao gravar no banco");
+         console.log(err);
+      })
+   }
+
+   $scope.btn_remover = function(id) {
+      HTTPSendService.remover_musica(id).then(function(res) {
          console.log(res);
          carregarGrid();
       }).catch(function(err) {
@@ -46,7 +55,6 @@ angular.module('demo', ['angular-medium-editor'])
          alert("Falhou ao carregar dados");
          console.log(err);
       })
-
    }
 
    $scope.btn_novo = function() {
@@ -107,6 +115,17 @@ angular.module('demo', ['angular-medium-editor'])
             },
          };
          return $http(req);
-      }
+      },
+
+      remover_musica: function(id) {
+         var req = {
+            method: 'DELETE',
+            url: host + '/partitura/' + id,
+            headers: {
+               'Content-Type': 'application/json; charset=utf-8'
+            },
+         };
+         return $http(req);
+      },
    }
 })

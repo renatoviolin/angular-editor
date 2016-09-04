@@ -15,73 +15,66 @@
 </head>
 
 <body ng-controller="demo">
-      
 
-    <div class="panel panel-default panel-primary">
-            <div class="panel-heading ">
-               <h2 class="panel-title">Musicas</h2>
-            </div>
-            <div class="panel-body">
-               <table class="table table-hover table-striped table-bordered">
-                  <thead>
-                     <tr>
-                        <!-- <th>Id</th> -->
-                        <th>Titulo</th>
-                        <th>Ação</th>
-                     </tr>
-                  </thead>
-                  <tr ng-repeat="item in grid.musicas">
-                     <!-- <td>{{item.id}}</td> -->
-                     <td>{{item.titulo}}</td>
-                     <td>
-                        <input type="button" class="btn btn-primary" value="Visualizar" ng-click="btn_carregar(item.id)" />
-                     </td>
-                  </tr>
-
-               </table>
-            </div>
-         </div>
-
-
-
-      <div class="panel-body">
-
-         
-
+   <div class="panel panel-default panel-primary">
+      <div class="panel-heading ">
+         <h2 class="panel-title">Musicas</h2>
       </div>
+      <div class="panel-body">
+         <table class="table table-hover table-striped table-bordered">
+            <thead>
+               <tr>
+                  <!-- <th>Id</th> -->
+                  <th>Titulo</th>
+                  <th>Ação</th>
+               </tr>
+            </thead>
+            <tr ng-repeat="item in grid.musicas">
+               <!-- <td>{{item.id}}</td> -->
+               <td>{{item.titulo}}</td>
+               <td>
+                  <input type="button" class="btn btn-primary" value="Visualizar" ng-click="btn_carregar(item.id)" />
+                  <input type="button" class="btn btn-danger" value="Remover" ng-click="btn_remover(item.id)" />
+               </td>
+            </tr>
 
+         </table>
+      </div>
+   </div>
 
-      <div id="container">
+   <div class="panel-body">
 
-           <div class="panel panel-default panel-primary">
-               <input type="button" class="btn btn-primary" value="Novo" ng-click="btn_novo()" />
-               <input type="button" class="btn btn-primary" value="Gravar" ng-click="btn_gravar()" />
-     <!-- <input type="button" class="btn btn-primary" value="Carregar" ng-click="btn_carregar(8)" />
+   </div>
+
+   <div id="container">
+
+      <div class="panel panel-default panel-primary">
+         <input type="button" class="btn btn-primary" value="Novo" ng-click="btn_novo()" />
+         <input type="button" class="btn btn-primary" value="Gravar" ng-click="btn_gravar()" />
+         <!-- <input type="button" class="btn btn-primary" value="Carregar" ng-click="btn_carregar(8)" />
  -->
-            </div>
-         <form>
+      </div>
+      <form>
 
          <div class="form-group">
             <label>Título:</label>
             <input name="titulo" class="form-control" ng-model="dados.titulo" />
          </div>
 
-            <div ng-model="dados.conteudo" class="editor" medium-editor bind-options="{'toolbar': { 'buttons': [ 'anchor'] },'anchorPreview': false,}">
-            </div>
-            <br>
- 
-         </form>
+         <div ng-model="dados.conteudo" class="editor" medium-editor bind-options="{'toolbar': { 'buttons': [ 'anchor'] },'anchorPreview': false,}">
+         </div>
+         <br>
 
-     
+      </form>
 
-      </div>
+   </div>
 
-      <script src="../bower_components/angular/angular.js"></script>
-      <script src="../bower_components/medium-editor/dist/js/medium-editor.js"></script>
-      <script src="../dist/angular-medium-editor.js"></script>
-      <script src="demo.js"></script>
+   <script src="../bower_components/angular/angular.js"></script>
+   <script src="../bower_components/medium-editor/dist/js/medium-editor.js"></script>
+   <script src="../dist/angular-medium-editor.js"></script>
+   <script src="demo.js"></script>
 
-      </script>
+   </script>
 </body>
 
 </html>
