@@ -2,7 +2,7 @@
 
 angular.module('demo', ['angular-medium-editor'])
 
-.controller('demo', function($scope, HTTPSendService,) {
+.controller('demo', function($scope, HTTPSendService, ) {
 
    $scope.dados = {
       "id": '',
@@ -28,7 +28,7 @@ angular.module('demo', ['angular-medium-editor'])
    carregarGrid();
 
    $scope.btn_gravar = function() {
-    // console.log($scope.dados);
+      // console.log($scope.dados);
       HTTPSendService.gravar_mensagem_banco($scope.dados).then(function(res) {
          console.log(res);
          carregarGrid();
@@ -60,7 +60,7 @@ angular.module('demo', ['angular-medium-editor'])
 })
 
 .factory('HTTPSendService', function($http) {
-
+   var host = 'https://nodedb-partitura.herokuapp.com';
    return {
       gravar_mensagem_banco: function(dados) {
 
@@ -68,7 +68,7 @@ angular.module('demo', ['angular-medium-editor'])
             dados.id = undefined;
             var req = {
                method: 'POST',
-               url: 'http://localhost:8000/partitura',
+               url: host + '/partitura',
                headers: {
                   'Content-Type': 'application/json'
                },
@@ -77,7 +77,7 @@ angular.module('demo', ['angular-medium-editor'])
          } else {
             var req = {
                method: 'PUT',
-               url: 'http://localhost:8000/partitura',
+               url: host + '/partitura',
                headers: {
                   'Content-Type': 'application/json'
                },
@@ -90,7 +90,7 @@ angular.module('demo', ['angular-medium-editor'])
       carregar_musica: function(id) {
          var req = {
             method: 'GET',
-            url: 'http://localhost:8000/partitura/' + id,
+            url: host + '/partitura/' + id,
             headers: {
                'Content-Type': 'application/json; charset=utf-8'
             },
@@ -101,7 +101,7 @@ angular.module('demo', ['angular-medium-editor'])
       buscar_musicas: function() {
          var req = {
             method: 'GET',
-            url: 'http://localhost:8000/partitura',
+            url: host + '/partitura',
             headers: {
                'Content-Type': 'application/json; charset=utf-8'
             },

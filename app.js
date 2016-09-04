@@ -10,11 +10,11 @@ app.use(bodyparser.json());
 // app.use(express.static(path.join(__dirname, '/')));
 // app.use(express.static(__dirname));
 
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 
-app.use("/", express.static(__dirname + '/'));
-app.use("/", express.static(__dirname + '/demo'));
 // app.use("/", express.static(__dirname + '/'));
+app.use("/", express.static(__dirname + '/demo'));
+app.use("/", express.static(__dirname + '/'));
 
 // var connection = require('./connection');
 var routes = require('./routes');
