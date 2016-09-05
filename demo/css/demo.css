@@ -108,7 +108,7 @@ blockquote {
    position: relative;
    top: -1em;
    display: inline-flex;
-   width: 0;
+   width: 0px;
    overflow: visible;
    color: red;
    font-weight: bold;
