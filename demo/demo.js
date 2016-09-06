@@ -2,7 +2,7 @@
 
 angular.module('demo', ['angular-medium-editor'])
 
-.controller('demo', function($scope, HTTPSendService, ) {
+.controller('demo', function($scope, HTTPSendService ) {
 
    $scope.dados = {
       "id": '',
